@@ -21,9 +21,9 @@ app.use(customParameters());
 
 ```javascript
 const customParameters = require('req-custom');
-const randomObject = {};
+const foo = {};
 
-customParameters(randomObject());
+customParameters()(foo);
 ```
 
 #### Adding with a specific *Symbol*
@@ -32,7 +32,7 @@ customParameters(randomObject());
 const customParameters = require('req-custom');
 const foo = {};
 
-customParameters(foo('id'));
+customParameters()('id');
 foo.setPrm('bar', 42);
 foo[Symbol.for('id')].bar === 42; // => true
 ```
