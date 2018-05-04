@@ -1,6 +1,6 @@
 {
   "name": "req-custom",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add custom parameters to an Object with Symbol, can be used as express middleware to add custom parameters to the req object.",
   "main": "index.js",
   "scripts": {

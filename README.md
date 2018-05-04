@@ -23,7 +23,7 @@ app.use(customParameters());
 const customParameters = require('req-custom');
 const foo = {};
 
-customParameters(foo);
+customParameters()(foo);
 ```
 
 #### Adding with a specific *Symbol*
