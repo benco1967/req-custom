@@ -23,7 +23,7 @@ app.use(customParameters());
 const customParameters = require('req-custom');
 const foo = {};
 
-customParameters()(foo);
+customParameters(foo);
 ```
 
 #### Adding with a specific *Symbol*
@@ -32,7 +32,7 @@ customParameters()(foo);
 const customParameters = require('req-custom');
 const foo = {};
 
-customParameters()('id');
+customParameters('id')(foo);
 foo.setPrm('bar', 42);
 foo[Symbol.for('id')].bar === 42; // => true
 ```
@@ -53,7 +53,7 @@ function middlewareWitre(req, res, next) {
 ```javascript
 function middlewareUse(req, res, next) {
   const a = req.getPrm('myParam');               // => { foo: 42, bar: { baz: 'value' } }
-  const a = req.getPrm('myParam', "foo");        // => 42
+  const b = req.getPrm('myParam', "foo");        // => 42
   const c = req.getPrm('myParam', "bar", "baz"); // => 'value'
   const d = req.getPrm('myParam', "qux");        // => null
   const foo = req.getPrm('quux');                // => null
