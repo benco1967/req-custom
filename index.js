@@ -33,7 +33,7 @@ module.exports = id => function(req, res, next) {
   /**
    * Suppression d'un paramètre
    * @param name le nom de la clé qui doit être supprimée
-   * @returns {*} valeur du paramèrrte supprimé
+   * @returns {*} valeur du paramètre supprimé
    */
   req.deletePrm = function(name) {
     const value = this[s][name];
